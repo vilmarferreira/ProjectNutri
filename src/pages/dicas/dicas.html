@@ -1,0 +1,56 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>dicas</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
+
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="ärrow-dropdown" refreshingSpinner="circles">
+
+    </ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-card *ngFor="let post of posts">
+    <div>
+      <img [src]= "post.better_featured_image.source_url"/>
+    </div>
+  <ion-card-content>
+    <ion-card-title [innerHTML]="post.title.rendered">
+      
+      </ion-card-title>
+    <p [innerHTML]="post.excerpt.rendered">
+    </p>
+  </ion-card-content>
+  <ion-row no-padding>
+    <ion-col>
+      <button ion-button clear small color="primary" icon-star>
+        {{post.date.split('T')[0]| date:'d MMM, y'}}
+      </button>
+    </ion-col>
+    <ion-col text-right>
+      <button ion-button smal color="primary" icon-start (click)="postTapped($event,post)">
+        Leia mais
+      </button>
+    </ion-col>
+  </ion-row>
+  </ion-card>
+
+  <ion-infinite-scroll [enabled]="morePageAvailabe"(ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubles" loadingText="Carregando...">
+
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

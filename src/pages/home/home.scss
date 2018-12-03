@@ -1,0 +1,28 @@
+page-home {
+.logo{
+    width: auto;
+    margin: auto;
+    display: block;
+    max-width: 30%;
+    padding-top: 20px;
+}
+.textos{
+    color:#000;
+    background: none;
+    text-align: center;
+    .a{
+        color:#000
+    }
+}
+.botao{
+    border-radius: 30px !important;
+}
+.ion-item{
+    border-radius: 30px !important;
+    padding-left: 10px !important;
+    color: #488aff;
+    background-color: #488aff;
+    opacity: 1;
+    font-size:0.9em ;
+}
+}
