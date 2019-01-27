@@ -11,6 +11,7 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import {RegisterPage} from '../pages/register/register';
 import {PostPage} from '../pages/post/post';
 import {TabsPage} from '../pages/tabs/tabs';
+import {IntroPage} from '../pages/intro/intro';
 import { RecuperarPage } from '../pages/recuperar/recuperar';
 import {AngularFireModule } from 'angularfire2';
 import {AngularFireAuthModule } from 'angularfire2/auth';
@@ -35,7 +36,8 @@ const firebaseAuth = {
     RecuperarPage,
     PerfilPage,
     PostPage,
-    TabsPage
+    TabsPage,
+    IntroPage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ const firebaseAuth = {
     RecuperarPage,
     PerfilPage,
     PostPage,
-    TabsPage
+    TabsPage,
+    IntroPage
   ],
   providers: [
     StatusBar,
